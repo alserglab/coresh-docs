@@ -1,6 +1,8 @@
 # Search Results
 
-The **Search Results** section provides detailed findings from your gene query, organized into two key areas: **Enriched Words** and **Gene Set Records**.
+The **Search Results** section provides detailed findings from your gene query, organized into two key areas: **Enriched Words** and **Matched Experiments**. The interface includes tools for exploration, filtering, and exporting results for further analysis.
+
+---
 
 ## Enriched Words
 
@@ -9,50 +11,65 @@ The **Search Results** section provides detailed findings from your gene query, 
 :align: center
 ```
 
-This table highlights words or terms that are significantly associated with the submitted gene list. The analysis is based on the **top 300 records** from ranked experiment results, ensuring that the most relevant and statistically significant data is used.
+This table highlights key terms that are significantly associated with the submitted gene list. The analysis is based on the **top 300 matched experiments** from the search results, ensuring that only the most relevant and statistically significant terms are shown.
 
-Each word is displayed with the following columns:
+### Statistical Methods:
+- **Statistical Test**: The exact Fisher test is used to assess the significance of term enrichment.
+- **Multiple Comparison Adjustment**: The Benjamini-Hochberg (BH) procedure is applied to control for false discovery rates, ensuring robust results.
+
+### Table Columns:
+- **Entity**: The enriched word or term.
 - **Freq**: The total frequency of the term across all available experiments in the database.
-- **FreqInTop**: The frequency of the term within the top 300 ranked experiments from the dataset.
-- **P-value** and **P-adjust**: These values indicate the statistical significance of the word's association with your gene list. Lower values reflect stronger relevance. The exact Fisher test is used for this analysis to determine statistical significance.
+- **FreqInTop**: The frequency of the term within the **top 300 matched experiments**.
+- **Fold Enrichment**: The fold increase in term frequency in the top-ranked experiments compared to its background frequency in all experiments.
+- **P-value**: The raw significance of the term's association with your gene list. Lower values indicate stronger associations.
+- **P-adjust**: Adjusted P-value (using BH adjustment) for multiple comparisons, providing a more stringent significance threshold.
 
-This section helps you identify common biological themes or experimental conditions related to your gene list.
+### Features:
+- **Show Word Analysis Toggle**: Toggle to show or hide the enriched words table.
+- **Download CSV**: Export the enriched words table for offline analysis.
 
-## Gene Set Records
+This section is crucial for identifying biological themes or experimental conditions related to the submitted gene list, based on the most relevant experiments.
+
+---
+
+## Matched Experiments
 
 ```{image} ../images/records.png
 :width: 720px
 :align: center
 ```
 
-This section lists the most relevant gene sets or datasets that match your query. For each record, the following information is provided:
+This section lists experimental datasets from the **Gene Expression Omnibus (GEO)** database that are most relevant to your query. Each experiment provides insights into how your gene set aligns with existing gene expression data.
 
-- **Rank**: The order of relevance of the dataset in relation to your gene list.
-- **Title**: The title of the dataset, as listed in the NCBI GEO database.
-- **pctVar**: Represents the percentage of explained variance in the entire dataset based on the provided gene set. It shows how much of the dataset's variability is accounted for by your gene set.
-- **log10 P-adjust**: The logarithm (base 10) of the adjusted p-value, where more negative values indicate higher statistical significance.
-- **GSE**: A direct link to the Gene Expression Omnibus (GEO) database for further exploration of the dataset.
+### Table Columns:
+- **Rank**: The relevance rank of the experiment relative to your query.
+- **Title**: The title of the dataset, summarizing the experiment. 
+- **Size**: The number of genes in the dataset.
+- **pctVar**: Percentage of explained variance in the dataset accounted for by the submitted gene list. This shows the impact of your gene set on the dataset's variability.
+- **log10_P-adjust**: The logarithm (base 10) of the adjusted P-value, where more negative values indicate higher statistical significance.
+- **GPL**: The platform ID used for the experiment (e.g., microarray or sequencing platform).
+- **GSE**: A clickable link to the corresponding experiment in the GEO database for further exploration.
 
-### Search Records
-
-The **Search Records** field allows you to quickly filter through the gene set records by entering relevant keywords or GSE IDs. This feature helps you efficiently locate specific datasets. This search functionality makes it easier to find relevant data, especially when dealing with a large number of records.
-
-### Expandable Gene Set Records
+### Expanded Details:
 
 ```{image} ../images/expandable_records.png
 :width: 720px
 :align: center
 ```
 
+- **Expanded Summary**: Click the "+" icon next to each record to view additional details, such as positively and negatively correlated words, experiment summaries, and relevant metadata.
+- **Explore Gene Expression Data**: Direct links allow users to explore experiment data in detail using external tools like the [Phantasus Web App](https://elifesciences.org/articles/85722) for interactive visualization and analysis.
 
-In the **Gene Set Records** section, each record has a plus ("+") icon next to it. Clicking this icon expands the entry to show more details about the experiment.
+### Features:
+- **Search Records**: A search bar lets users filter matched experiments by keywords, titles, or GSE IDs.
+- **Pagination**: Navigate large result sets using pagination, with customizable entries per page.
+- **Download CSV**: Export the complete table of matched experiments for external analysis.
 
-- **Expanded Summary**: Once expanded, a brief summary of the experiment is displayed, providing additional insights into the study, such as specific gene expression changes and experimental conditions.
-  
-- **Phantasus Web App Link**: In the expanded view, an icon links to the [Phantasus](https://elifesciences.org/articles/85722) web application, which allows you to visually explore the dataset. Phantasus is a powerful tool for interactive data exploration and visualization, enabling further in-depth analysis of the gene expression data.
-
-This functionality enables you to quickly access both a summary of the experiment and additional tools for further investigation.
+---
 
 ### Conclusion
 
-The **Search Results** section delivers a detailed analysis of enriched terms and associated gene sets, providing valuable insights into gene coregulation patterns and related experimental data. With features like keyword search, expandable summaries, and links to visual exploration tools, it helps streamline the analysis process for in-depth gene expression exploration.
+The **Search Results** section, with its **Enriched Words** and **Matched Experiments** subsections, provides a comprehensive analysis of your gene query. The **Enriched Words** analysis focuses on the **top 300 matched datasets**, identifying statistically significant biological terms or experimental conditions using the exact Fisher test with BH adjustment for multiple comparisons. The **Matched Experiments** section connects your gene set to the most relevant GEO datasets, offering valuable insights into gene coregulation patterns and experimental data. 
+
+Features like keyword search, expandable summaries, and data export ensure that this tool supports both high-level insights and in-depth exploration for gene expression analysis.
