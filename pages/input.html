@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -67,7 +64,6 @@
     <link rel="next" title="Search Results" href="output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -118,8 +126,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -149,11 +156,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -174,14 +185,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -293,16 +299,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -326,10 +340,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-species">Query Species</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-species">Database Species</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list">Gene List</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-example">Input Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-interface-overview">Input Interface Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-species">Query Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-species">Database Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list">Gene List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-feature">Example Feature</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list-example">Gene List Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-button">Search Button</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -343,45 +364,57 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="search-input">
 <h1>Search Input<a class="headerlink" href="#search-input" title="Link to this heading">#</a></h1>
-<p>Here are the main input search interface components.</p>
+<p>The <strong>Search Input</strong> section allows users to define their query parameters and input a gene list for analysis.</p>
+<section id="input-interface-overview">
+<h2>Input Interface Overview<a class="headerlink" href="#input-interface-overview" title="Link to this heading">#</a></h2>
+<p>The input interface consists of the following components:</p>
 <a class="reference internal image-reference" href="../_images/input.png"><img alt="../_images/input.png" class="align-center" src="../_images/input.png" style="width: 720px;" /></a>
 <section id="query-species">
-<h2>Query Species<a class="headerlink" href="#query-species" title="Link to this heading">#</a></h2>
-<p>The Query Species radio button lets you select the organism corresponding to your gene list.</p>
+<h3>Query Species<a class="headerlink" href="#query-species" title="Link to this heading">#</a></h3>
+<p>The <strong>Query Species</strong> radio button lets you select the organism corresponding to your gene list. Options include:</p>
 <ul class="simple">
-<li><p>Homo sapiens: Choose this if your genes are from humans.</p></li>
-<li><p>Mus musculus: Choose this if your genes are from mice.</p></li>
+<li><p><strong>Homo sapiens</strong>: Select this if your genes are from humans.</p></li>
+<li><p><strong>Mus musculus</strong>: Select this if your genes are from mice.</p></li>
 </ul>
 </section>
 <section id="database-species">
-<h2>Database Species<a class="headerlink" href="#database-species" title="Link to this heading">#</a></h2>
-<p>The Database Species option controls which organism’s database will be used for the coregulation search.</p>
+<h3>Database Species<a class="headerlink" href="#database-species" title="Link to this heading">#</a></h3>
+<p>The <strong>Database Species</strong> option specifies the organism’s database that will be queried for coregulation analysis. Options include:</p>
 <ul class="simple">
-<li><p>Homo sapiens: Select this to search within human experiment data.</p></li>
-<li><p>Mus musculus: Select this to search within mouse experiment data.</p></li>
+<li><p><strong>Homo sapiens</strong>: Select this option to search within human experimental data available in the Gene Expression Omnibus (GEO) database. This specifies that only datasets from human experiments will be used for the coregulation search.</p></li>
+<li><p><strong>Mus musculus</strong>: Select this option to search within mouse experimental data available in the Gene Expression Omnibus (GEO) database. This ensures that the search is limited to datasets derived from mouse experiments.</p></li>
 </ul>
+<p>These options control the scope of the query by defining the species-specific experiments in the GEO database that will be used to identify relevant gene coregulation patterns.</p>
 </section>
 <section id="gene-list">
-<h2>Gene List<a class="headerlink" href="#gene-list" title="Link to this heading">#</a></h2>
-<p>The Gene List field is where you input the genes for your query.</p>
+<h3>Gene List<a class="headerlink" href="#gene-list" title="Link to this heading">#</a></h3>
+<p>The <strong>Gene List</strong> field is where you input the genes for your query. Accepted formats include:</p>
 <ul class="simple">
-<li><p>The search engine accepts Gene Symbols, Gene Entrez IDs, and RefSeqGene IDs.</p></li>
-<li><p>Make sure to enter each gene on a new line, or separate them with spaces or tabs.</p></li>
+<li><p><strong>Gene Symbols</strong>, <strong>Gene Entrez IDs</strong>, and <strong>RefSeqGene IDs</strong>.</p></li>
+<li><p>Input format: Enter each gene on a new line, or separate them with spaces or tabs.</p></li>
 </ul>
+<p>This flexible input format ensures compatibility with a variety of gene identifiers.</p>
 </section>
-<section id="input-example">
-<h2>Input Example<a class="headerlink" href="#input-example" title="Link to this heading">#</a></h2>
-<p>Here is the possible input example.</p>
+<section id="example-feature">
+<h3>Example Feature<a class="headerlink" href="#example-feature" title="Link to this heading">#</a></h3>
+<p>The tool includes an “Example” link that populates the query form with a predefined gene list and settings. This feature provides a quick and convenient way to test the tool’s functionality or explore its features.</p>
+<p>Example configuration:</p>
 <ul class="simple">
-<li><p>Query Species: Homo sapiens</p></li>
-<li><p>Database Species: Homo sapiens</p></li>
+<li><p><strong>Query Species</strong>: Homo sapiens</p></li>
+<li><p><strong>Database Species</strong>: Homo sapiens</p></li>
 </ul>
-<p>Gene List:</p>
+<section id="gene-list-example">
+<h4>Gene List Example:<a class="headerlink" href="#gene-list-example" title="Link to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ACKR3</span> <span class="n">ADM</span> <span class="n">ADORA2B</span> <span class="n">AK4</span> <span class="n">AKAP12</span> <span class="n">ALDOA</span> <span class="n">ALDOB</span> <span class="n">ALDOC</span> <span class="n">AMPD3</span> <span class="n">ANGPTL4</span> <span class="n">ANKZF1</span> <span class="n">ANXA2</span> <span class="n">ATF3</span> <span class="n">ATP7A</span> <span class="n">B3GALT6</span> <span class="n">B4GALNT2</span> <span class="n">BCAN</span> <span class="n">BCL2</span> <span class="n">BGN</span> <span class="n">BHLHE40</span> <span class="n">BNIP3L</span> <span class="n">BRS3</span> <span class="n">BTG1</span> <span class="n">CA12</span> <span class="n">CASP6</span> <span class="n">CAV1</span> <span class="n">CAVIN1</span> <span class="n">CAVIN3</span> <span class="n">CCN1</span> <span class="n">CCN2</span> <span class="n">CCN5</span> <span class="n">CCNG2</span> <span class="n">CDKN1A</span> <span class="n">CDKN1B</span> <span class="n">CDKN1C</span> <span class="n">CHST2</span> <span class="n">CHST3</span> <span class="n">CITED2</span> <span class="n">COL5A1</span> <span class="n">CP</span> <span class="n">CSRP2</span> <span class="n">CXCR4</span> <span class="n">DCN</span> <span class="n">DDIT3</span> <span class="n">DDIT4</span> <span class="n">DPYSL4</span> <span class="n">DTNA</span> <span class="n">DUSP1</span> <span class="n">EDN2</span> <span class="n">EFNA1</span> <span class="n">EFNA3</span> <span class="n">EGFR</span> <span class="n">ENO1</span> <span class="n">ENO2</span> <span class="n">ENO3</span> <span class="n">ERO1A</span> <span class="n">ERRFI1</span> <span class="n">ETS1</span> <span class="n">EXT1</span> <span class="n">F3</span> <span class="n">FAM162A</span> <span class="n">FBP1</span> <span class="n">FOS</span> <span class="n">FOSL2</span> <span class="n">FOXO3</span> <span class="n">GAA</span> <span class="n">GALK1</span> <span class="n">GAPDH</span> <span class="n">GAPDHS</span> <span class="n">GBE1</span> <span class="n">GCK</span> <span class="n">GCNT2</span> <span class="n">GLRX</span> <span class="n">GPC1</span> <span class="n">GPC3</span> <span class="n">GPC4</span> <span class="n">GPI</span> <span class="n">GRHPR</span> <span class="n">GYS1</span> <span class="n">HAS1</span> <span class="n">HDLBP</span> <span class="n">HEXA</span> <span class="n">HK1</span> <span class="n">HK2</span> <span class="n">HMOX1</span> <span class="n">HOXB9</span> <span class="n">HS3ST1</span> <span class="n">HSPA5</span> <span class="n">IDS</span> <span class="n">IER3</span> <span class="n">IGFBP1</span> <span class="n">IGFBP3</span> <span class="n">IL6</span> <span class="n">ILVBL</span> <span class="n">INHA</span> <span class="n">IRS2</span> <span class="n">ISG20</span> <span class="n">JMJD6</span> <span class="n">JUN</span> <span class="n">KDELR3</span> <span class="n">KDM3A</span> <span class="n">KIF5A</span> <span class="n">KLF6</span> <span class="n">KLF7</span> <span class="n">KLHL24</span> <span class="n">LALBA</span> <span class="n">LARGE1</span> <span class="n">LDHA</span> <span class="n">LDHC</span> <span class="n">LOX</span> <span class="n">LXN</span> <span class="n">MAFF</span> <span class="n">MAP3K1</span> <span class="n">MIF</span> <span class="n">MT1E</span> <span class="n">MT2A</span> <span class="n">MXI1</span> <span class="n">MYH9</span> <span class="n">NAGK</span> <span class="n">NCAN</span> <span class="n">NDRG1</span> <span class="n">NDST1</span> <span class="n">NDST2</span> <span class="n">NEDD4L</span> <span class="n">NFIL3</span> <span class="n">NOCT</span> <span class="n">NR3C1</span> <span class="n">P4HA1</span> <span class="n">P4HA2</span> <span class="n">PAM</span> <span class="n">PCK1</span> <span class="n">PDGFB</span> <span class="n">PDK1</span> <span class="n">PDK3</span> <span class="n">PFKFB3</span> <span class="n">PFKL</span> <span class="n">PFKP</span> <span class="n">PGAM2</span> <span class="n">PGF</span> <span class="n">PGK1</span> <span class="n">PGM1</span> <span class="n">PGM2</span> <span class="n">PHKG1</span> <span class="n">PIM1</span> <span class="n">PKLR</span> <span class="n">PKP1</span> <span class="n">PLAC8</span> <span class="n">PLAUR</span> <span class="n">PLIN2</span> <span class="n">PNRC1</span> <span class="n">PPARGC1A</span> <span class="n">PPFIA4</span> <span class="n">PPP1R15A</span> <span class="n">PPP1R3C</span> <span class="n">PRDX5</span> <span class="n">PRKCA</span> <span class="n">PYGM</span> <span class="n">RBPJ</span> <span class="n">RORA</span> <span class="n">RRAGD</span> <span class="n">S100A4</span> <span class="n">SAP30</span> <span class="n">SCARB1</span> <span class="n">SDC2</span> <span class="n">SDC3</span> <span class="n">SDC4</span> <span class="n">SELENBP1</span> <span class="n">SERPINE1</span> <span class="n">SIAH2</span> <span class="n">SLC25A1</span> <span class="n">SLC2A1</span> <span class="n">SLC2A3</span> <span class="n">SLC2A5</span> <span class="n">SLC37A4</span> <span class="n">SLC6A6</span> <span class="n">SRPX</span> <span class="n">STBD1</span> <span class="n">STC1</span> <span class="n">STC2</span> <span class="n">SULT2B1</span> <span class="n">TES</span> <span class="n">TGFB3</span> <span class="n">TGFBI</span> <span class="n">TGM2</span> <span class="n">TIPARP</span> <span class="n">TKTL1</span> <span class="n">TMEM45A</span> <span class="n">TNFAIP3</span> <span class="n">TPBG</span> <span class="n">TPD52</span> <span class="n">TPI1</span> <span class="n">TPST2</span> <span class="n">UGP2</span> <span class="n">VEGFA</span> <span class="n">VHL</span> <span class="n">VLDLR</span> <span class="n">WSB1</span> <span class="n">XPNPEP1</span> <span class="n">ZFP36</span> <span class="n">ZNF292</span>
 </pre></div>
 </div>
-<p>This gene list represents a set of genes involved in various biological processes, many of which are associated with the Human Gene Set: HALLMARK_HYPOXIA.
-These genes are commonly studied in the context of the cellular response to low oxygen levels (hypoxia), and the gene set is used to identify patterns of gene expression that are activated under hypoxic conditions.</p>
+<p>This example list contains genes from the <strong>Human Gene Set: HALLMARK_HYPOXIA</strong>, which are associated with biological processes such as the cellular response to low oxygen levels (hypoxia). This example is useful for identifying gene expression patterns activated under hypoxic conditions.</p>
+</section>
+</section>
+<section id="search-button">
+<h3>Search Button<a class="headerlink" href="#search-button" title="Link to this heading">#</a></h3>
+<p>After filling in the form, clicking the <strong>Search</strong> button starts the analysis. The input data is processed, and the results are presented in the <strong>Search Results</strong> section.</p>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -433,8 +466,7 @@ These genes are commonly studied in the context of the cellular response to low 
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -443,10 +475,17 @@ These genes are commonly studied in the context of the cellular response to low 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-species">Query Species</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#database-species">Database Species</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list">Gene List</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-example">Input Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-interface-overview">Input Interface Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-species">Query Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#database-species">Database Species</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list">Gene List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-feature">Example Feature</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gene-list-example">Gene List Example:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-button">Search Button</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -471,7 +510,7 @@ By Vladimir Sukhov
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -495,8 +534,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
