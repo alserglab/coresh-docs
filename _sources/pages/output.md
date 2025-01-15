@@ -2,6 +2,9 @@
 
 The **Search Results** section provides detailed findings from your gene query, organized into two key areas: **Enriched Words** and **Matched Experiments**. The interface includes tools for exploration, filtering, and exporting results for further analysis.
 
+You can view an example of search results for the HSA Hallmark Hypoxia {cite:t}`liberzon2011molecular` gene set input by visiting the following URL:
+<a href="https://alserglab.wustl.edu/coresh/load/hsa_hallmark_hypoxia" target="_blank">https://alserglab.wustl.edu/coresh/load/hsa_hallmark_hypoxia</a>
+
 ---
 
 ## Enriched Words
@@ -13,11 +16,11 @@ The **Search Results** section provides detailed findings from your gene query, 
 
 This table highlights key terms that are significantly associated with the submitted gene list. The analysis is based on the **top 300 matched experiments** from the search results, ensuring that only the most relevant and statistically significant terms are shown.
 
-### Statistical Methods:
+### Statistical Methods
 - **Statistical Test**: The exact Fisher test is used to assess the significance of term enrichment.
 - **Multiple Comparison Adjustment**: The Benjamini-Hochberg (BH) procedure is applied to control for false discovery rates, ensuring robust results.
 
-### Table Columns:
+### Table Columns
 - **Entity**: The enriched word or term.
 - **Freq**: The total frequency of the term across all available experiments in the database.
 - **FreqInTop**: The frequency of the term within the **top 300 matched experiments**.
@@ -25,7 +28,7 @@ This table highlights key terms that are significantly associated with the submi
 - **P-value**: The raw significance of the term's association with your gene list. Lower values indicate stronger associations.
 - **P-adjust**: Adjusted P-value (using BH adjustment) for multiple comparisons, providing a more stringent significance threshold.
 
-### Features:
+### Features
 - **Show Word Analysis Toggle**: Toggle to show or hide the enriched words table.
 - **Download CSV**: Export the enriched words table for offline analysis.
 
@@ -42,7 +45,7 @@ This section is crucial for identifying biological themes or experimental condit
 
 This section lists experimental datasets from the **Gene Expression Omnibus (GEO)** database that are most relevant to your query. Each experiment provides insights into how your gene set aligns with existing gene expression data.
 
-### Table Columns:
+### Table Columns
 - **Rank**: The relevance rank of the experiment relative to your query.
 - **Title**: The title of the dataset, summarizing the experiment. 
 - **Size**: The number of genes in the dataset.
@@ -51,7 +54,7 @@ This section lists experimental datasets from the **Gene Expression Omnibus (GEO
 - **GPL**: The platform ID used for the experiment (e.g., microarray or sequencing platform).
 - **GSE**: A clickable link to the corresponding experiment in the GEO database for further exploration.
 
-### Expanded Details:
+### Expanded Details
 
 ```{image} ../images/expandable_records.png
 :width: 720px
@@ -73,3 +76,8 @@ This section lists experimental datasets from the **Gene Expression Omnibus (GEO
 The **Search Results** section, with its **Enriched Words** and **Matched Experiments** subsections, provides a comprehensive analysis of your gene query. The **Enriched Words** analysis focuses on the **top 300 matched datasets**, identifying statistically significant biological terms or experimental conditions using the exact Fisher test with BH adjustment for multiple comparisons. The **Matched Experiments** section connects your gene set to the most relevant GEO datasets, offering valuable insights into gene coregulation patterns and experimental data. 
 
 Features like keyword search, expandable summaries, and data export ensure that this tool supports both high-level insights and in-depth exploration for gene expression analysis.
+
+
+```{bibliography}
+:style: unsrt
+```
