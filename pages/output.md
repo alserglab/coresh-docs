@@ -50,7 +50,7 @@ This section lists experimental datasets from the **Gene Expression Omnibus (GEO
 - **Title**: The title of the dataset, summarizing the experiment. 
 - **Size**: The number of genes in the dataset.
 - **pctVar**: Percentage of explained variance in the dataset accounted for by the submitted gene list. This shows the impact of your gene set on the dataset's variability.
-- **log10_P-adjust**: The logarithm (base 10) of the adjusted P-value, where more negative values indicate higher statistical significance.
+- **log<sub>10</sub> P-adjust**: The logarithm (base 10) of the adjusted P-value, where more negative values indicate higher statistical significance.
 - **GPL**: The platform ID used for the experiment (e.g., microarray or sequencing platform).
 - **GSE**: A clickable link to the corresponding experiment in the GEO database for further exploration.
 
