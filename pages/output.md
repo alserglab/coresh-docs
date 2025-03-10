@@ -2,7 +2,7 @@
 
 The **Search Results** section provides detailed findings from your gene query, organized into two key areas: **Enriched Words** and **Matched Experiments**. The interface includes tools for exploration, filtering, and exporting results for further analysis.
 
-You can view an example of search results for the HSA Hallmark Hypoxia {cite:t}`liberzon2011molecular` gene set input by visiting the following URL:
+You can view an example of search results for the HSA Hallmark Hypoxia {cite}`liberzon2011molecular` gene set input by visiting the following URL:
 <a href="https://alserglab.wustl.edu/coresh/load/hsa_hallmark_hypoxia" target="_blank">https://alserglab.wustl.edu/coresh/load/hsa_hallmark_hypoxia</a>
 
 ---
@@ -62,9 +62,9 @@ This section lists experimental datasets from the **Gene Expression Omnibus (GEO
 ```
 
 - **Expanded Summary**: Click the "+" icon next to each record to view additional details, such as positively and negatively correlated words, experiment summaries, and relevant metadata.
-- **Explore Gene Expression Data**: Direct links allow users to explore experiment data in detail using external tools like the [Phantasus Web App](https://elifesciences.org/articles/85722) for interactive visualization and analysis.
+- **Explore Gene Expression Data**: Direct links allow users to explore experiment data in detail using external tools like the [Phantasus Web App](https://elifesciences.org/articles/85722) {cite}`kleverov2024phantasus` for interactive visualization and analysis.
 
-### Features:
+### Features
 - **Search Records**: A search bar lets users filter matched experiments by keywords, titles, or GSE IDs.
 - **Pagination**: Navigate large result sets using pagination, with customizable entries per page.
 - **Download CSV**: Export the complete table of matched experiments for external analysis.
@@ -77,7 +77,3 @@ The **Search Results** section, with its **Enriched Words** and **Matched Experi
 
 Features like keyword search, expandable summaries, and data export ensure that this tool supports both high-level insights and in-depth exploration for gene expression analysis.
 
-
-```{bibliography}
-:style: unsrt
-```

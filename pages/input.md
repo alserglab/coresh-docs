@@ -65,4 +65,3 @@ ACKR3 ADM ADORA2B AK4 AKAP12 ALDOA ALDOB ALDOC AMPD3 ANGPTL4 ANKZF1 ANXA2 ATF3 A
 ```
 
 This example list contains genes from the **Human Gene Set: HALLMARK_HYPOXIA** {cite}`liberzon2011molecular`, which are associated with biological processes such as the cellular response to low oxygen levels (hypoxia). This example is useful for identifying gene expression patterns activated under hypoxic conditions.
-
