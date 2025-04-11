@@ -5,5 +5,6 @@ format: jb-book
 root: pages/input
 chapters:
   - file: pages/output
+  - file: pages/study-cases
   - file: pages/references
   - file: pages/contacts
