@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CORESH Hallmark Gene Set Results &#8212; CORESH Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/hallmarks';</script>
+    <link rel="icon" href="../_static/coresh_o.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="references.html" />
+    <link rel="prev" title="Study Cases" href="study-cases.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="input.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">CORESH Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="input.html">
+                    Search Input
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="output.html">Search Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="study-cases.html">Study Cases</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">CORESH Hallmark Gene Set Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contacts.html">Contact Us</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/vdsukhov/coresh_frontend" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/pages/hallmarks.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CORESH Hallmark Gene Set Results</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-collection">Human collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mouse-collection">Mouse collection</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="coresh-hallmark-gene-set-results">
+<h1>CORESH Hallmark Gene Set Results<a class="headerlink" href="#coresh-hallmark-gene-set-results" title="Link to this heading">#</a></h1>
+<section id="human-collection">
+<h2>Human collection<a class="headerlink" href="#human-collection" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signature name</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HALLMARK_ADIPOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ADIPOGENESIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ALLOGRAFT_REJECTION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ALLOGRAFT_REJECTION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_ANDROGEN_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ANDROGEN_RESPONSE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ANGIOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ANGIOGENESIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_APICAL_JUNCTION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APICAL_JUNCTION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_APICAL_SURFACE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APICAL_SURFACE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_APOPTOSIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APOPTOSIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_BILE_ACID_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_BILE_ACID_METABOLISM_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_CHOLESTEROL_HOMEOSTASIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_CHOLESTEROL_HOMEOSTASIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_COAGULATION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_COAGULATION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_COMPLEMENT</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_COMPLEMENT_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_DNA_REPAIR</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_DNA_REPAIR_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_E2F_TARGETS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_E2F_TARGETS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_ESTROGEN_RESPONSE_EARLY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ESTROGEN_RESPONSE_EARLY_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ESTROGEN_RESPONSE_LATE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ESTROGEN_RESPONSE_LATE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_FATTY_ACID_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_FATTY_ACID_METABOLISM_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_G2M_CHECKPOINT</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_G2M_CHECKPOINT_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_GLYCOLYSIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_GLYCOLYSIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_HEDGEHOG_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HEDGEHOG_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_HEME_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HEME_METABOLISM_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_HYPOXIA</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HYPOXIA_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_IL2_STAT5_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_IL2_STAT5_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_IL6_JAK_STAT3_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_IL6_JAK_STAT3_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_INFLAMMATORY_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INFLAMMATORY_RESPONSE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_INTERFERON_ALPHA_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INTERFERON_ALPHA_RESPONSE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_INTERFERON_GAMMA_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INTERFERON_GAMMA_RESPONSE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_KRAS_SIGNALING_DN</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_KRAS_SIGNALING_DN_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_KRAS_SIGNALING_UP</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_KRAS_SIGNALING_UP_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MITOTIC_SPINDLE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MITOTIC_SPINDLE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_MTORC1_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MTORC1_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MYC_TARGETS_V1</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYC_TARGETS_V1_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_MYC_TARGETS_V2</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYC_TARGETS_V2_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MYOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYOGENESIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_NOTCH_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_NOTCH_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_OXIDATIVE_PHOSPHORYLATION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_OXIDATIVE_PHOSPHORYLATION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_P53_PATHWAY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_P53_PATHWAY_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_PANCREAS_BETA_CELLS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PANCREAS_BETA_CELLS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_PEROXISOME</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PEROXISOME_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_PI3K_AKT_MTOR_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PI3K_AKT_MTOR_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_PROTEIN_SECRETION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PROTEIN_SECRETION_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_SPERMATOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_SPERMATOGENESIS_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_TGF_BETA_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_TGF_BETA_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_TNFA_SIGNALING_VIA_NFKB</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_TNFA_SIGNALING_VIA_NFKB_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_UNFOLDED_PROTEIN_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UNFOLDED_PROTEIN_RESPONSE_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_UV_RESPONSE_DN</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UV_RESPONSE_DN_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_UV_RESPONSE_UP</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UV_RESPONSE_UP_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_WNT_BETA_CATENIN_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_WNT_BETA_CATENIN_SIGNALING_hsa" target="_blank">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_XENOBIOTIC_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_XENOBIOTIC_METABOLISM_hsa" target="_blank">Link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="mouse-collection">
+<h2>Mouse collection<a class="headerlink" href="#mouse-collection" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Signature name</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HALLMARK_ADIPOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ADIPOGENESIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ALLOGRAFT_REJECTION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ALLOGRAFT_REJECTION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_ANDROGEN_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ANDROGEN_RESPONSE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ANGIOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ANGIOGENESIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_APICAL_JUNCTION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APICAL_JUNCTION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_APICAL_SURFACE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APICAL_SURFACE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_APOPTOSIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_APOPTOSIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_BILE_ACID_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_BILE_ACID_METABOLISM_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_CHOLESTEROL_HOMEOSTASIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_CHOLESTEROL_HOMEOSTASIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_COAGULATION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_COAGULATION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_COMPLEMENT</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_COMPLEMENT_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_DNA_REPAIR</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_DNA_REPAIR_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_E2F_TARGETS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_E2F_TARGETS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_ESTROGEN_RESPONSE_EARLY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ESTROGEN_RESPONSE_EARLY_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_ESTROGEN_RESPONSE_LATE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_ESTROGEN_RESPONSE_LATE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_FATTY_ACID_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_FATTY_ACID_METABOLISM_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_G2M_CHECKPOINT</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_G2M_CHECKPOINT_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_GLYCOLYSIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_GLYCOLYSIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_HEDGEHOG_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HEDGEHOG_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_HEME_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HEME_METABOLISM_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_HYPOXIA</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_HYPOXIA_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_IL2_STAT5_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_IL2_STAT5_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_IL6_JAK_STAT3_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_IL6_JAK_STAT3_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_INFLAMMATORY_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INFLAMMATORY_RESPONSE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_INTERFERON_ALPHA_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INTERFERON_ALPHA_RESPONSE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_INTERFERON_GAMMA_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_INTERFERON_GAMMA_RESPONSE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_KRAS_SIGNALING_DN</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_KRAS_SIGNALING_DN_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_KRAS_SIGNALING_UP</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_KRAS_SIGNALING_UP_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MITOTIC_SPINDLE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MITOTIC_SPINDLE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_MTORC1_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MTORC1_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MYC_TARGETS_V1</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYC_TARGETS_V1_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_MYC_TARGETS_V2</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYC_TARGETS_V2_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_MYOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_MYOGENESIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_NOTCH_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_NOTCH_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_OXIDATIVE_PHOSPHORYLATION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_OXIDATIVE_PHOSPHORYLATION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_P53_PATHWAY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_P53_PATHWAY_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_PANCREAS_BETA_CELLS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PANCREAS_BETA_CELLS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_PEROXISOME</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PEROXISOME_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_PI3K_AKT_MTOR_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PI3K_AKT_MTOR_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_PROTEIN_SECRETION</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_PROTEIN_SECRETION_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_SPERMATOGENESIS</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_SPERMATOGENESIS_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_TGF_BETA_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_TGF_BETA_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_TNFA_SIGNALING_VIA_NFKB</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_TNFA_SIGNALING_VIA_NFKB_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_UNFOLDED_PROTEIN_RESPONSE</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UNFOLDED_PROTEIN_RESPONSE_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_UV_RESPONSE_DN</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UV_RESPONSE_DN_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_UV_RESPONSE_UP</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_UV_RESPONSE_UP_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-even"><td><p>HALLMARK_WNT_BETA_CATENIN_SIGNALING</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_WNT_BETA_CATENIN_SIGNALING_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>HALLMARK_XENOBIOTIC_METABOLISM</p></td>
+<td><p><a href="https://alserglab.wustl.edu/coresh/load/HALLMARK_XENOBIOTIC_METABOLISM_mmu" target="_blank" rel="noopener noreferrer">Link</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="study-cases.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Study Cases</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">References</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#human-collection">Human collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mouse-collection">Mouse collection</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Vladimir Sukhov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
