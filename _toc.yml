@@ -6,5 +6,6 @@ root: pages/input
 chapters:
   - file: pages/output
   - file: pages/study-cases
+  - file: pages/hallmarks
   - file: pages/references
   - file: pages/contacts
