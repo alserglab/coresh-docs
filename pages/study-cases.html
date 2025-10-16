@@ -16,30 +16,33 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -65,6 +68,7 @@
     <link rel="prev" title="Search Results" href="output.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -155,15 +148,11 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -178,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="output.html">Search Results</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Study Cases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hallmarks.html">CORESH Hallmark Gene Set Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progeny.html">CORESH Progeny Gene Set Results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coresh-local.html">Using CORESH locally</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contacts.html">Contact Us</a></li>
@@ -189,9 +179,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -303,24 +298,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -363,8 +350,7 @@ document.write(`
 <h2>Gene signature induced by a pyroptosis secretome<a class="headerlink" href="#gene-signature-induced-by-a-pyroptosis-secretome" title="Link to this heading">#</a></h2>
 <p>In the first case study, we show how CORESH can be used for hypothesis generation. For this, we apply CORESH to investigate a gene signature induced in bone-marrow derived macrophages by a pyroptosis secretome, reproducing our previous results <span id="id1">[<a class="reference internal" href="references.html#id5" title="Parul Mehrotra, Sophia Maschalidi, Laura Boeckaerts, Christian Maueröder, Rochelle Tixeira, Jonathan Pinney, Javier Burgoa Cardás, Vladimir Sukhov, Yunus Incik, Christopher J Anderson, and others. Oxylipins and metabolites from pyroptotic cells act as promoters of tissue repair. Nature, 631(8019):207–215, 2024.">4</a>]</span>. More specifically, in this study we considered a system where macrophages undergo pyroptosis without releasing IL-1β/α (denoted Pyro<sup>-1</sup>) and showed beneficial effects of Pyro<sup>-1</sup> secretome on wound healing. Interested in understanding this effect, we profiled gene expression in macrophages treated with Pyro<sup>-1</sup> secretome. We compiled a gene signature of genes upregulated in Pyro<sup>-1</sup> treatment and used this signature as a query for the search engine. Among the top hits, CORESH identified several datasets (e.g., GSE119509 and GSE41833) of macrophages treated with Prostaglandin E2 (PGE2), where the Pyro<sup>-1</sup> signature was upregulated following PGE2 treatment (<a class="reference external" href="https://alserglab.wustl.edu/coresh/load/example_pyroptosis">https://alserglab.wustl.edu/coresh/load/example_pyroptosis</a>, <a class="reference internal" href="#pyro-genes"><span class="std std-numref">Fig. 1</span></a>).</p>
 <figure class="align-center" id="pyro-genes">
-<a class="reference internal image-reference" href="../_images/pyro-genes.png"><img alt="../_images/pyro-genes.png" src="../_images/pyro-genes.png" style="width: 500px;" />
-</a>
+<a class="reference internal image-reference" href="../_images/pyro-genes.png"><img alt="../_images/pyro-genes.png" src="../_images/pyro-genes.png" style="width: 500px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Profile of the Pyro<sup>-1</sup> gene signature in datasets GSE119509 (A) and GSE41833 (B).</span><a class="headerlink" href="#pyro-genes" title="Link to this image">#</a></p>
 </figcaption>
@@ -375,16 +361,14 @@ document.write(`
 <h2>Smoking-associated gene signature<a class="headerlink" href="#smoking-associated-gene-signature" title="Link to this heading">#</a></h2>
 <p>In another scenario, we demonstrate how CORESH can be used for the interpretation of a gene signature, either as a complement to or in place of classical pathway analysis. To illustrate this, we use a 20-gene signature obtained from asthma patient samples by the UnPaSt biclustering method <span id="id3">[<a class="reference internal" href="references.html#id6" title="Michael Hartung, Andreas Maier, Fernando Delgado-Chaves, Yuliya Burankova, Olga I Isaeva, Fábio Malta de Sá Patroni, Daniel He, Casey Shannon, Katharina Kaufmann, Jens Lohmann, and others. Unpast: unsupervised patient stratification by differentially expressed biclusters in omics data. arXiv preprint arXiv:2408.00200, 2024.">5</a>]</span>. In the study, the authors correlated this signature with the donors’ smoking status, which was available as a variable in their discovery cohort. Notably, when ran through commonly used gene set analysis tools like Enrichr <span id="id4">[<a class="reference internal" href="references.html#id7" title="Maxim V Kuleshov, Matthew R Jones, Andrew D Rouillard, Nicolas F Fernandez, Qiaonan Duan, Zichen Wang, Simon Koplev, Sherry L Jenkins, Kathleen M Jagodnik, Alexander Lachmann, and others. Enrichr: a comprehensive gene set enrichment analysis web server 2016 update. Nucleic acids research, 44(W1):W90–W97, 2016.">6</a>]</span>, this signature cannot be directly connected to smoking—the closest gene set hits are NFE2L2-related reactive oxygen stress response gene sets. Similarly, there are no smoking-related datasets at the top of RummaGEO results (<a class="reference internal" href="#rummageo-screenshot"><span class="std std-numref">Fig. 2</span></a>).</p>
 <figure class="align-center" id="rummageo-screenshot">
-<a class="reference internal image-reference" href="../_images/RummaGeo-results-smoking-signature.png"><img alt="../_images/RummaGeo-results-smoking-signature.png" src="../_images/RummaGeo-results-smoking-signature.png" style="width: 720px;" />
-</a>
+<a class="reference internal image-reference" href="../_images/RummaGeo-results-smoking-signature.png"><img alt="../_images/RummaGeo-results-smoking-signature.png" src="../_images/RummaGeo-results-smoking-signature.png" style="width: 720px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Screenshot of RummaGEO results with the smoking-associated signature used as input.</span><a class="headerlink" href="#rummageo-screenshot" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>However, when used with CORESH, the top-ranked datasets are highly enriched in smoking-related experiments (<a class="reference external" href="https://alserglab.wustl.edu/coresh/load/example_smoking">https://alserglab.wustl.edu/coresh/load/example_smoking</a>). This is reflected by term enrichment results, where the “smokers” is one of the top enriched terms, following “lung” and “lung cancer”. Furthermore, one can observe that the query signature is frequently correlated with smoking-related sample annotations (<a class="reference internal" href="#coresh-smoking-screenshot"><span class="std std-numref">Fig. 3</span></a>).</p>
 <figure class="align-center" id="coresh-smoking-screenshot">
-<a class="reference internal image-reference" href="../_images/coresh-smoking.png"><img alt="../_images/coresh-smoking.png" src="../_images/coresh-smoking.png" style="width: 720px;" />
-</a>
+<a class="reference internal image-reference" href="../_images/coresh-smoking.png"><img alt="../_images/coresh-smoking.png" src="../_images/coresh-smoking.png" style="width: 720px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot of the detailed information for dataset GSE10006, one of the top datasets found for the smoking-associated signature.</span><a class="headerlink" href="#coresh-smoking-screenshot" title="Link to this image">#</a></p>
 </figcaption>
@@ -447,7 +431,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -506,8 +491,8 @@ By Vladimir Sukhov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
